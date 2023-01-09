@@ -32,3 +32,7 @@ python convertVCL.py --all path/to/all/vcl/files
 ```bash
 python convertVCL.py --file path/to/a/vcl/file
 ```
+
+## Credit:
+
+Many thanks to [StSav012](https://github.com/StSav012) for the `log_parser.py` code.
