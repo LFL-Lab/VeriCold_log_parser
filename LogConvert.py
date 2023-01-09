@@ -11,13 +11,25 @@ class LogConvert:
 
     def get_formatted_name(self):
         name = os.path.split(self.file_path)[1].replace("vcl","csv")
+        fpath = os.path.split(self.file_path)[0]
         if sys.platform == "win32":
             try:
-                name = r".\\data_csv\\" + name
+                save_path = fpath+r"\\data_csv\\"
+                try:
+                    os.makedirs(save_path)
+                except:
+                    pass
+                name = save_path + name
             except:
                 raise SystemError()
         else:
-            name = "./data_csv/" + name
+            save_path = fpath+r"/data_csv/"
+            try:
+                os.makedirs(save_path)
+            except:
+                pass
+            name = save_path + name
+
         return name
 
     def get_data(self):

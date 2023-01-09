@@ -10,7 +10,10 @@ def convert_1_file(fname):
 def convert_all_files(fpath):
     fnames = glob.glob(fpath+"/*.vcl")
     for fname in tqdm(fnames):
-        LogConvert(fname).to_csv()
+        try:
+            LogConvert(fname).to_csv()
+        except:
+            print("="*30+"\nLogfile {} needs to be looked at manually\n".format(fname)+"="*30)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Conversion tool from .vcl files to .csv for Oxford Instrument Dilution Refridgerators with Triton System')
