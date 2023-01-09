@@ -32,6 +32,10 @@ python convertVCL.py --all path/to/all/vcl/files
 ```bash
 python convertVCL.py --file path/to/a/vcl/file
 ```
+## To Do:
+
+- [ ] Check on Windows Machine
+
 
 ## Credit:
 
